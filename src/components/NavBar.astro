@@ -1,0 +1,350 @@
+---
+import NavLink from "./NavLink.astro";
+
+import { link, links, abletonLinks, abletonLearningLinks } from "@const";
+---
+
+<nav class="main-nav">
+  <div class="main-nav__wrapper">
+    <div class="main-nav__navigation">
+      <a
+        class="main-nav__logo"
+        title="Go to homepage"
+        target="_blank"
+        href={link}
+        ><svg
+          role="img"
+          aria-label="Logo Ableton"
+          class="logo__image"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="21"
+          viewBox="0 0 45 21"
+          ><path
+            d="M0 0h3v21H0zM6 0h3v21H6zM12 0h3v21h-3zM18 0h3v21h-3zM24 18h21v3H24zM24 12h21v3H24zM24 6h21v3H24zM24 0h21v3H24z"
+          ></path></svg
+        ></a
+      >
+
+      <ul class="main-nav__menu">
+        {links.map((title) => <NavLink link={link} title={title} />)}
+        <li class="main-nav__more">
+          <label for="toggle-button" class="main-nav__toggle">More</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-nav__cta">
+      <a class="main-nav__trial" href=`${link}trial/` target="_blank"
+        >Try Live for free</a
+      >
+
+      <a class="main-nav__login" href=`${link}login/?next=/en/about/`
+        >Log in or register</a
+      >
+    </div>
+
+    <label class="responsive-toggle" for="toggle-button">Menu</label>
+  </div>
+
+  <input type="checkbox" name="toggle-button" id="toggle-button" />
+
+  <div class="main-nav__menu--toggle">
+    <div class="menu__wrapper">
+      <ul class="main-nav__menu">
+        {links.map((title) => <NavLink link={link} title={title} />)}
+      </ul>
+
+      <div class="main-nav__cta">
+        <a class="main-nav__trial" href=`${link}trial/` target="_blank"
+          >Try Live for free</a
+        >
+
+        <a class="main-nav__login" href=`${link}login/?next=/en/about/`
+          >Log in or register</a
+        >
+      </div>
+    </div>
+    <div class="menu__wrapper">
+      <h4>More on Ableton.com:</h4>
+      <ul class="menu__list">
+        {
+          abletonLinks.map((abletonLink) => (
+            <li>
+              <a
+                class="menu__link"
+                href={`${link}${abletonLink.url}`}
+                target="_blank"
+              >
+                {abletonLink.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="menu__wrapper">
+      <h4>More on Ableton:</h4>
+      <ul class="menu__list">
+        {
+          abletonLearningLinks.map((abletonLink) => (
+            <li>
+              <a href={abletonLink.url} target="_blank">
+                <h5>{abletonLink.title}</h5>
+                <p>{abletonLink.body}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .main-nav {
+    margin-inline: 40px;
+  }
+
+  .main-nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-family: "Futura PT Medium", sans-serif;
+  }
+
+  .main-nav__logo,
+  .responsive-toggle {
+    z-index: 20;
+  }
+
+  .main-nav__trial {
+    color: var(--full-blue);
+  }
+
+  /*------ Menu Toggle ------*/
+
+  .main-nav__menu,
+  .main-nav__cta,
+  .main-nav__navigation {
+    display: flex;
+    gap: 30px;
+  }
+
+  .main-nav__more {
+    color: var(--orange);
+  }
+
+  .main-nav__toggle {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .main-nav__toggle::after {
+    content: "+";
+  }
+
+  .main-nav:has(input[type="checkbox"]:checked)
+    .main-nav__wrapper
+    .main-nav__toggle::after {
+    content: "-";
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .main-nav__more::selection,
+  .main-nav__toggle::selection {
+    background-color: transparent;
+  }
+
+  .responsive-toggle {
+    display: none;
+  }
+
+  .main-nav__logo,
+  .responsive-toggle {
+    transition: color 0.6s ease;
+  }
+
+  @keyframes move-down {
+    from {
+      transform: translateY(-180vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes move-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-180vh);
+    }
+  }
+
+  /*------ Menu ------*/
+  input[type="checkbox"]:checked ~ .main-nav__menu--toggle {
+    display: block;
+  }
+
+  .main-nav__menu--toggle {
+    padding: 40px 0;
+    display: none;
+  }
+
+  .menu__wrapper:nth-child(2) > .menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .menu__wrapper:nth-child(2) > .menu__list a {
+    font-size: 1.2rem;
+  }
+  .menu__wrapper:last-child > .menu__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+  }
+
+  .menu__wrapper > h4 {
+    font-family: "Futura PT Medium", sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .menu__list h5 {
+    font-family: "Futura PT Medium", sans-serif;
+  }
+
+  .menu__list p {
+    font-size: 1.1rem;
+  }
+
+  .responsive__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .responsive__menu {
+    font-family: "Futura PT Medium", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.5rem;
+  }
+
+  /*------ RESPONSIVE MENU ------*/
+
+  .main-nav__menu--toggle :is(.main-nav__menu, .main-nav__cta) {
+    display: none;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .main-nav__menu--toggle {
+      visibility: hidden;
+    }
+
+    .main-nav__wrapper {
+      justify-content: start;
+    }
+
+    .responsive-toggle {
+      margin-left: 30px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .responsive-toggle::selection {
+      background-color: transparent;
+    }
+
+    .responsive-toggle::after {
+      content: "+";
+    }
+
+    .main-nav:has(input[type="checkbox"]:checked)
+      .main-nav__wrapper
+      .responsive-toggle::after {
+      content: "-";
+    }
+
+    .main-nav__menu,
+    .main-nav__cta {
+      display: none;
+    }
+
+    .menu__wrapper :is(.main-nav__menu, .main-nav__cta) {
+      display: flex;
+      font-size: 1.5rem;
+      font-family: "Futura PT Medium", sans-serif;
+    }
+
+    .main-nav__menu {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .main-nav__cta {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .main-nav__trial {
+      color: inherit;
+    }
+
+    .main-nav {
+      margin-inline: 30px;
+    }
+
+    .main-nav__menu--toggle {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 60px 30px;
+      animation: move-up 0.6s ease-in-out both;
+      background-color: var(--full-blue);
+      color: #eee;
+    }
+
+    .main-nav:has(input[type="checkbox"]:checked) .main-nav__wrapper {
+      color: #eee;
+    }
+
+    input[type="checkbox"]:checked ~ .main-nav__menu--toggle {
+      animation: move-down 0.6s ease-in-out both;
+    }
+
+    .menu__list {
+      flex-direction: column;
+    }
+
+    .menu__wrapper:nth-child(2) > .menu__list {
+      gap: 10px;
+    }
+  }
+</style>
+
+<script>
+  const menu = document.querySelector(".main-nav__menu--toggle");
+
+  if (window.innerWidth < 1000) {
+    window.setTimeout(() => {
+      //@ts-ignore
+      menu.style.visibility = "visible";
+    }, 650);
+  }
+</script>

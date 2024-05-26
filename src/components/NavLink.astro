@@ -1,0 +1,7 @@
+---
+const { link, title } = Astro.props;
+---
+
+<li>
+  <a href={`${link}${title}/`} target="_blank">{title}</a>
+</li>
