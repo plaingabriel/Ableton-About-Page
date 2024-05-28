@@ -1,7 +1,34 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import AboutHeader from "@components/AboutHeader.astro";
+import AboutText from "@components/AboutText.astro";
+import contents from "@content";
+import Image1 from "@sections/Image1.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main></main>
+  <main>
+    <AboutHeader />
+
+    <section>
+      <AboutText title={contents[0].title} text={contents[0].text} />
+      <Image1 />
+    </section>
+  </main>
 </Layout>
+
+<style>
+  main,
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+  }
+
+  @media screen and (max-width: 800px) {
+    main,
+    section {
+      gap: 60px;
+    }
+  }
+</style>

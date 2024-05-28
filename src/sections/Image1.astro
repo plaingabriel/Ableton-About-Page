@@ -1,0 +1,64 @@
+<div class="wrapper-father">
+  <div class="wrapper">
+    <img src="/images/photo-1.webp" alt="Image 1" />
+    <img src="/images/photo-2.webp" alt="Imaeg 2" />
+  </div>
+
+  <div class="div"></div>
+</div>
+
+<style>
+  .wrapper-father {
+    position: relative;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 10%;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 7.5rem 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .wrapper {
+      margin: 6rem 0;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .wrapper {
+      margin: 4rem 0;
+    }
+  }
+
+  .div {
+    position: absolute;
+    background-color: var(--yellow);
+    width: 60%;
+    height: 100%;
+    right: 0;
+    z-index: -100;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 70vh;
+  }
+
+  img:first-child {
+    width: 50%;
+    aspect-ratio: 16 / 16.5;
+  }
+
+  img:last-child {
+    width: 40%;
+    aspect-ratio: 16 / 11.5;
+  }
+</style>

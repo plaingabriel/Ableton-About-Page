@@ -1,0 +1,38 @@
+---
+const { title, text } = Astro.props;
+---
+
+<div>
+  <h4 class="about_text_title">{title}</h4>
+  <p>{text}</p>
+</div>
+
+<script>
+  // Convert innerText to innerHTML
+  const titleNode = document.querySelector(".about_text_title");
+  const title = titleNode.textContent;
+
+  titleNode.innerHTML = title;
+</script>
+
+<style>
+  div {
+    max-width: 700px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 40px;
+  }
+
+  h4 {
+    font-family: "Futura PT Medium", sans-serif;
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+</style>

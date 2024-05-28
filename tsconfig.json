@@ -3,9 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@content": ["./src/content.json"],
       "@const": ["./src/const.js"],
       "@components/*": ["src/components/*"],
-      "@layouts/*": ["./src/layouts/*"]
+      "@layouts/*": ["./src/layouts/*"],
+      "@sections/*": ["./src/sections/*"]
     }
   }
 }
