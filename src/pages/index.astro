@@ -4,6 +4,7 @@ import AboutHeader from "@components/AboutHeader.astro";
 import AboutText from "@components/AboutText.astro";
 import contents from "@content";
 import Image1 from "@sections/Image1.astro";
+import Media from "@sections/Media.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,15 +15,34 @@ import Image1 from "@sections/Image1.astro";
       <AboutText title={contents[0].title} text={contents[0].text} />
       <Image1 />
     </section>
-  </main>
-</Layout>
+
+    <section>
+      <AboutText title={contents[1].title} text={contents[1].text} />
+      <Media />
+    </section>
+
+    <section>
+      <AboutText
+        title={contents[2].title}
+        text={contents[2].text}
+        changeBalance
+      />
+    </section>
+  </main></Layout
+>
 
 <style>
   main,
   section {
     display: flex;
     flex-direction: column;
-    gap: 150px;
+    gap: 100px;
+  }
+
+  section:nth-child(3) {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    gap: 60px;
   }
 
   @media screen and (max-width: 800px) {
