@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div class="div"></div>
+  <div class="gallery-1">
+    <img class="image-1" src="/images/photo-3.webp" alt="photo 3" />
+    <img src="/images/photo-4.webp" alt="photo 4" class="image-2" />
+  </div>
+  <div class="gallery-2">
+    <img src="/images/photo-5.webp" alt="photo 5" class="image-3" />
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: -1;
+  }
+
+  .div {
+    position: absolute;
+    width: 62%;
+    height: 100%;
+    background-color: var(--green);
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .gallery-1,
+  .gallery-2 {
+    width: 50%;
+    display: flex;
+  }
+
+  .gallery-1 {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6.25rem;
+    padding: 6.25rem 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .gallery-1 {
+      row-gap: 3.75rem;
+      padding: 3.75rem 0;
+    }
+  }
+
+  .gallery-1 > img {
+    max-width: 70%;
+    aspect-ratio: 14 / 9;
+  }
+
+  .gallery-2 > img {
+    max-width: 80%;
+  }
+</style>

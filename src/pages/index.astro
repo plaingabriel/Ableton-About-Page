@@ -5,6 +5,7 @@ import AboutText from "@components/AboutText.astro";
 import contents from "@content";
 import Image1 from "@sections/Image1.astro";
 import Media from "@sections/Media.astro";
+import Image2 from "@sections/Image2.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -25,6 +26,16 @@ import Media from "@sections/Media.astro";
       <AboutText
         title={contents[2].title}
         text={contents[2].text}
+        changeBalance
+      />
+
+      <Image2 />
+    </section>
+
+    <section>
+      <AboutText
+        title={contents[3].title}
+        text={contents[3].text}
         changeBalance
       />
     </section>
