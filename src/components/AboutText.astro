@@ -1,5 +1,5 @@
 ---
-const { title, text, changeBalance = false } = Astro.props;
+const { title, text, text2 = "", changeBalance = false } = Astro.props;
 ---
 
 <div>
@@ -11,6 +11,8 @@ const { title, text, changeBalance = false } = Astro.props;
     )
   }
   <p>{text}</p>
+
+  {text2 && <p>{text2}</p>}
 </div>
 
 <script>
