@@ -1,0 +1,62 @@
+<div class="wrapper">
+  <div class="div"></div>
+  <img src="/images/photo-6.webp" alt="photo 6" />
+  <img src="/images/photo-7.webp" alt="photo 7" />
+</div>
+
+<style>
+  .wrapper {
+    position: relative;
+    z-index: -1;
+    padding-left: 6rem;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  img:nth-child(2) {
+    max-width: 40%;
+    margin: 14rem 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .wrapper {
+      padding-left: 5rem;
+    }
+
+    img:nth-child(2) {
+      margin: 10rem 0;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .wrapper {
+      padding-left: 3rem;
+    }
+
+    img:nth-child(2) {
+      margin: 5rem 0;
+    }
+  }
+
+  img:last-child {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    aspect-ratio: 10 / 10;
+  }
+
+  .div {
+    position: absolute;
+    max-width: 70%;
+    height: 100%;
+    background-color: var(--purple);
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+  }
+</style>

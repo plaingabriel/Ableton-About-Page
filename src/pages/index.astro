@@ -7,6 +7,7 @@ import Image1 from "@sections/Image1.astro";
 import Media from "@sections/Media.astro";
 import Image2 from "@sections/Image2.astro";
 import Image3 from "@sections/Image3.astro";
+import Image4 from "@sections/Image4.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -48,6 +49,15 @@ import Image3 from "@sections/Image3.astro";
         title={contents[4].title}
         text={contents[4].text1}
         text2={contents[4].text2}
+        changeBalance
+      />
+      <Image4 />
+    </section>
+
+    <section>
+      <AboutText
+        title={contents[5].title}
+        text={contents[5].text}
         changeBalance
       />
     </section>
