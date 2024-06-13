@@ -1,0 +1,109 @@
+<div class="card">
+  <div class="img-wrapper">
+    <img src="/images/photo-8.webp" alt="photo 8" />
+  </div>
+  <div class="text">
+    <div class="text-wrapper">
+      <div class="body-text">
+        <p>
+          We’re really proud of the work we’ve done so far. But there’s so much
+          more to come. If you’d like to be a part of it, please join us.
+        </p>
+        <a href="/">See latest jobs</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    border: 1px solid var(--full-blue);
+    max-width: 82%;
+    margin-inline: auto;
+  }
+
+  .img-wrapper {
+    max-width: 50%;
+    min-height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/12;
+  }
+
+  .text {
+    max-width: 50%;
+    min-height: 100%;
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+  }
+
+  .text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .body-text {
+    max-width: 60%;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  p,
+  a {
+    font-family: "Futura PT Medium", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+
+  a {
+    position: relative;
+    color: var(--full-blue);
+  }
+
+  a::after {
+    content: ">";
+    position: absolute;
+    right: -20px;
+    top: 0.1px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .card {
+      flex-direction: column;
+    }
+
+    .img-wrapper {
+      max-width: 100%;
+    }
+
+    .text {
+      margin-top: -5px;
+      max-width: 100%;
+    }
+
+    .body-text {
+      max-width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .text {
+      padding: 3rem 0;
+    }
+
+    p,
+    a {
+      font-size: 1.6rem;
+    }
+  }
+</style>

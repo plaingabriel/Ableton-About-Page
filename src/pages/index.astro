@@ -8,9 +8,10 @@ import Media from "@sections/Media.astro";
 import Image2 from "@sections/Image2.astro";
 import Image3 from "@sections/Image3.astro";
 import Image4 from "@sections/Image4.astro";
+import Card from "@components/Card.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Learn more about Ableton">
   <main>
     <AboutHeader />
 
@@ -60,7 +61,10 @@ import Image4 from "@sections/Image4.astro";
         text={contents[5].text}
         changeBalance
       />
+      <Card />
     </section>
+
+    <footer></footer>
   </main></Layout
 >
 
