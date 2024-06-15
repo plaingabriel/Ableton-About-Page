@@ -1,0 +1,247 @@
+---
+import Facebook from "@assets/Facebook.astro";
+import Twitter from "@assets/Twitter.astro";
+import YouTube from "@assets/YouTube.astro";
+import Instagram from "@assets/Instagram.astro";
+import TikTok from "@assets/TikTok.astro";
+---
+
+<footer class="footer">
+  <div class="footer__wrapper">
+    <header class="footer__header">
+      <h2 class="footer__title">Ableton</h2>
+    </header>
+
+    <div class="footer__main">
+      <div class="footer__column">
+        <div class="column__row">
+          <ul class="row__link-list">
+            <li class="link-list__item">
+              <a href="/">Register Live or Push</a>
+            </li>
+            <li class="link-list__item"><a href="/">About Ableton</a></li>
+            <li class="link-list__item"><a href="/">Jobs</a></li>
+          </ul>
+
+          <ul class="row__social-list">
+            <li class="social__item"><a href="/"><Facebook /></a></li>
+            <li class="social__item"><a href="/"><Twitter /></a></li>
+            <li class="social__item"><a href="/"><YouTube /></a></li>
+            <li class="social__item"><a href="/"><Instagram /></a></li>
+            <li class="social__item"><a href="/"><TikTok /></a></li>
+          </ul>
+        </div>
+        <div class="column__row">
+          <h5>Community</h5>
+
+          <ul class="row__link-list">
+            <li class="link-list__item">
+              <a href="/">Find Ableton User Groups</a>
+            </li>
+            <li class="link-list__item">
+              <a href="/">Find Certified Training</a>
+            </li>
+            <li class="link-list__item">
+              <a href="/">Become a Certified Trainer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__column">
+        <div class="column__row --with-form">
+          <div class="row__text">
+            <h5>Sign up o our newsletter</h5>
+            <p>
+              Enter your email address to stay up to date with the latest
+              offers, tutorials, downloads, surveys and more.
+            </p>
+          </div>
+
+          <form class="row__form">
+            <input
+              class="form__email"
+              type="text"
+              placeholder="Email address"
+            />
+            <button class="form__button" type="submit">Sign up</button>
+          </form>
+        </div>
+        <div class="column__row">
+          <h5>Education</h5>
+
+          <ul class="row__link-list">
+            <li class="link-list__item">
+              <a href="/">Offers for students and teachers</a>
+            </li>
+            <li class="link-list__item">
+              <a href="/">Ableton for the Classroom</a>
+            </li>
+            <li class="link-list__item">
+              <a href="/">Ableton for Colleges and Universities</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="sub-footer">
+      <ul class="sub-footer__link-list">
+        <li class="sub-footer__link-item">
+          <a href="/">Contact Us</a>
+        </li>
+        <li class="sub-footer__link-item">
+          <a href="/">Press Resources</a>
+        </li>
+        <li class="sub-footer__link-item">
+          <a href="/">Legal Info</a>
+        </li>
+        <li class="sub-footer__link-item">
+          <a href="/">Privacy Policy</a>
+        </li>
+        <li class="sub-footer__link-item">
+          <a href="/">Cookie Policy</a>
+        </li>
+        <li class="sub-footer__link-item">
+          <a href="/">Imprint</a>
+        </li>
+      </ul>
+
+      <div class="sub-footer__signature">
+        <span>Made in Berlin</span>
+        <img src="/images/ableton-logo.svg" alt="Ableton logo" />
+      </div>
+    </footer>
+  </div>
+</footer>
+
+<style>
+  h5,
+  a,
+  span,
+  p {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer {
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+  }
+
+  .footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    width: 82%;
+  }
+
+  .footer__title {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .footer__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  .row__link-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .row__link-list ~ .row__social-list {
+    margin-top: 1rem;
+  }
+
+  .link-list__item > a::after {
+    content: ">";
+    font-size: 0.9rem;
+    margin-left: 0.3rem;
+  }
+
+  .row__social-list {
+    display: flex;
+    column-gap: 0.5rem;
+    justify-content: space-between;
+    max-width: 10%;
+  }
+
+  .--with-form {
+    max-width: 500px;
+  }
+
+  .row__form {
+    margin-top: 1rem;
+    display: flex;
+    height: 2.8rem;
+  }
+
+  .form__email {
+    border: none;
+    width: 80%;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    background-color: #f0f0f0;
+  }
+
+  .form__button {
+    width: 20%;
+    background-color: var(--full-blue);
+    color: white;
+    border: none;
+    font-family: "Futura PT Medium", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .sub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .sub-footer__link-list {
+    display: flex;
+    column-gap: 2rem;
+  }
+
+  .sub-footer__signature {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .footer__main {
+      flex-direction: column;
+      row-gap: 50px;
+    }
+
+    .sub-footer {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 50px;
+    }
+
+    .sub-footer__link-list {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+</style>
